@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile Program",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-g",
+        "${fileBasenameNoExtension}.cpp", // Include your main file
+        "classes/*.cpp", // Include all .cpp files inside the 'classes' folder
+        "-Iclasses", // Include the 'classes' folder for header files
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}.exe" // Output executable
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"],
+      "isBackground": false
+    },
+    {
+      "label": "Run Program",
+      "type": "shell",
+      "command": "${fileDirname}/${fileBasenameNoExtension}.exe",
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      },
+      "dependsOn": ["Compile Program"],
+      "problemMatcher": [],
+      "isBackground": false
+    },
+    {
+      "label": "Clean Build Files",
+      "type": "shell",
+      "command": "rm",
+      "args": ["-f", "${fileDirname}/${fileBasenameNoExtension}.exe"],
+      "group": {
+        "kind": "none",
+        "isDefault": false
+      },
+      "problemMatcher": [],
+      "isBackground": false
+    }
+  ]
+}
