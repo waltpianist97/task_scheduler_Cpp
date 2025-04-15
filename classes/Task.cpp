@@ -7,7 +7,7 @@ void Task::mostra_dettagli(){
 };
 
 void Task::esegui(){
-    std::cout<<"task eseguito"<<std::endl;
+    std::cout<<"Il task viene eseguito"<<std::endl;
 }
 
 

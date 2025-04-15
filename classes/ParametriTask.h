@@ -10,6 +10,6 @@ struct ParametriCasa : public ParametriTask {
 };
 
 struct ParametriGiardino : public ParametriTask {
-    int metri_quadri;
+    int metri_quadri = 20;
 };
 #endif

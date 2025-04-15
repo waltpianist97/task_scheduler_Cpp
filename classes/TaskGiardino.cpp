@@ -3,7 +3,7 @@
 
 
 void TaskGiardino::esegui(){
-    std::cout<<"Task nel giardino e stato eseguito."<<this->giardino<<std::endl;
+    std::cout<<"Il task "<<this->dettagli.id<<" viene eseguito in giardino."<<std::endl;
 }
 
 void TaskGiardino::mostra_dettagli(){

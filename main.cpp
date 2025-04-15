@@ -12,7 +12,7 @@ int main(){
     TaskFactory tf ;
 
     // CREA 2 TASK
-    std::cout<<"CREAZIONE PRIMI 2 TASKS:"<<std::endl;
+    std::cout<<"CREAZIONE PRIMI 2 TASKS..."<<std::endl;
 
     Dettagli dc;
     dc.id ="0xff123";
@@ -28,9 +28,16 @@ int main(){
     dg.nome = "allarme";
     dg.descrizione = "spegni l'allarme";
     ParametriGiardino* pg = new ParametriGiardino;
-    pg->metri_quadri=20;
+    pg->metri_quadri=50;
 
     tf.creaTask(dg,TipoTask::Giardino,pg);
+
+    dg.id ="0xff129";
+    dg.nome = "piscina";
+    dg.descrizione = "riempi la piscina";
+    ParametriGiardino* pg1 = new ParametriGiardino;
+
+    tf.creaTask(dg,TipoTask::Giardino,pg1);
 
     for (auto &t:tf.tasks){
         
@@ -38,6 +45,7 @@ int main(){
         t->esegui();
     }
 
+    // RIMUOVI UN TASK ...
     tf.rimuoviTask("0xff125");
     std::cout<<std::endl;
     std::cout<<"RIMOZIONE TASK..."<<std::endl;
